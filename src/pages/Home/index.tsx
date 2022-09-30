@@ -144,13 +144,13 @@ const index = () => {
         filterList.map((el) => (
           <div className="bg-gradient-to-r from-cyan-500 to-blue-500 w-screen h-screen flex justify-center items-center">
             ;
-            <div className="w-[300px]  sm:w-[450px] md:w-[750px] flex flex-col justify-center items-center  not-italic">
+            <div className="w-[320px]  sm:w-[450px] md:w-[750px] flex flex-col justify-center items-center  not-italic">
               <div className="font-medium text-xl text-stone-50  h-[100px] w-full flex items-center justify-center">
                 <h3 className="text-center sm:w-[500px] md:w-full font-mono font-semibold text-2xl">
                   {el.question}
                 </h3>
               </div>
-              <div className="p-10 w-[290px]  h-[400px] sm:w-[450px] md:w-[750px]  bg-[url('/src/assests/food.jpeg')] bg-cover flex justify-center ">
+              <div className="p-10 w-[340px]  h-[400px] sm:w-[450px] md:w-[750px]  bg-[url('/src/assests/food.jpeg')] bg-cover flex justify-center ">
                 <div>
                   <ChoiceComponent
                     Clickedchoice={Clickedchoice}

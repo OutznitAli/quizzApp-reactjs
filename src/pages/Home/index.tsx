@@ -140,6 +140,31 @@ const index = () => {
 
   return (
     <>
+      {filterList &&
+        filterList.map((el) => (
+          <div className="bg-gradient-to-r from-cyan-500 to-blue-500 w-screen h-screen flex justify-center items-center">
+            ;
+            <div className="w-[300px]  sm:w-[450px] md:w-[750px] flex flex-col justify-center items-center  not-italic">
+              <div className="font-medium text-xl text-stone-50  h-[100px] w-full flex items-center justify-center">
+                <h3 className="text-center sm:w-[500px] md:w-full font-mono font-semibold text-2xl">
+                  {el.question}
+                </h3>
+              </div>
+              <div className="p-10 w-[290px]  h-[400px] sm:w-[450px] md:w-[750px]  bg-[url('/src/assests/food.jpeg')] bg-cover flex justify-center ">
+                <div>
+                  <ChoiceComponent
+                    Clickedchoice={Clickedchoice}
+                    HandlClickNext={HandlClickNext}
+                    choices={el.choices}
+                  />
+                </div>
+              </div>
+              <div className="font-semibold font-mono text-stone-50">
+                Question {currentQest}/10
+              </div>
+            </div>
+          </div>
+        ))}
       {currentQest > List.length && (
         <div className="bg-gradient-to-r   from-cyan-500 to-blue-500 flex flex-col justify-center items-center">
           <span className=" font-semibold text-stone-100 p-2 font-Fredoka text-3xl">
@@ -218,31 +243,6 @@ const index = () => {
           </div>
         </div>
       )}
-      {filterList &&
-        filterList.map((el) => (
-          <div className="bg-gradient-to-r from-cyan-500 to-blue-500 h-screen flex justify-center items-center">
-            ;
-            <div className="flex flex-col justify-center items-center  not-italic">
-              <div className="font-medium text-xl text-stone-50  h-[100px] w-full flex items-center justify-center">
-                <p className=" text-center sm:w-[500px] md:w-full font-mono font-semibold text-2xl">
-                  {el.question}
-                </p>
-              </div>
-              <div className="p-10 md:w-[800px] h-[400px] sm:w-[500px]  bg-[url('/src/assests/food.jpeg')] bg-cover flex justify-center ">
-                <div>
-                  <ChoiceComponent
-                    Clickedchoice={Clickedchoice}
-                    HandlClickNext={HandlClickNext}
-                    choices={el.choices}
-                  />
-                </div>
-              </div>
-              <div className="font-semibold font-mono text-stone-50">
-                Question {currentQest}/10
-              </div>
-            </div>
-          </div>
-        ))}
     </>
   );
 };

@@ -5,9 +5,9 @@ const index = ({ choices, HandlClickNext, Clickedchoice }: any) => {
     <>
       {choices.map((res: any, i: any) => {
         return (
-          <ul key={i}>
-            <li className=" h-[60px] w-[400px] flex items-center  text-blue-400 rounded-lg border-b overflow-hidden    duration-500 transition-all bg-stone-100  hover:bg-cyan-500 hover:shadow-lg hover:text-stone-50 m-2 font-mono cursor-pointer text-lg shadow-xl ">
-              <div className="flex items-center gap-2 pl-3 w-full h-full ">
+          <ul key={i} className="w-[300px] sm:w-[380px] md:w-[450px] ">
+            <li className="  h-[60px] flex items-center  text-blue-400 rounded-lg border-b overflow-hidden    duration-500 transition-all bg-stone-100  hover:bg-cyan-500 hover:shadow-lg hover:text-stone-50 m-2 font-mono cursor-pointer text-lg shadow-xl ">
+              <div className=" flex items-center gap-2 pl-3 w-full h-full ">
                 <input
                   onClick={Clickedchoice}
                   id={`list-radio-license-${i}`}
@@ -28,7 +28,7 @@ const index = ({ choices, HandlClickNext, Clickedchoice }: any) => {
           </ul>
         );
       })}
-      <div className="flex justify-end ">
+      <div className=" mr-2  flex justify-end ">
         <button
           onClick={HandlClickNext}
           className="p-2 rounded-lg px-10 text-stone-50 font-semibold duration-500 hover:bg-cyan-500 bg-cyan-600"

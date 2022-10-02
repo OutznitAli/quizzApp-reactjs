@@ -85,7 +85,7 @@ const index = () => {
       correctAnswer: 3,
     },
   ];
-  var List = questionList;
+
   const [userChoice, setUserChoice] = useState<any>({
     question: "",
     choices: "",
@@ -93,10 +93,14 @@ const index = () => {
     correctAnswer: "",
     userChoice: "",
   });
+
   const [userListAnswers, setUserListAnswers] = useState<any>([]);
   const [currentQest, setCurrentQuest] = useState(1);
   const [isChecked, setIsChecked] = useState(false);
-  const filterList = List.filter((el) => el.questionNumber === currentQest);
+
+  const filterList = questionList.filter(
+    (el) => el.questionNumber === currentQest
+  );
 
   var correctAnswer: string[] = [];
 
@@ -106,14 +110,15 @@ const index = () => {
 
   const HandlClickNext = (e: any) => {
     if (isChecked) {
-      if (currentQest < List.length + 1) {
+      if (currentQest < questionList.length + 1) {
         setUserListAnswers([...userListAnswers, userChoice]);
         setCurrentQuest(currentQest + 1);
       } else {
         e.preventDefault();
       }
+      setIsChecked(false);
     } else {
-      swal("pay attention!", "You shoud select a choice !", "warning");
+      swal("You shoud select a choice !", "", "warning");
     }
   };
 
@@ -135,8 +140,6 @@ const index = () => {
   );
 
   let FinalScore = result.filter((item: boolean) => item === true);
-
-  console.log("this is user userListAnswers", userListAnswers);
 
   return (
     <>
@@ -165,7 +168,7 @@ const index = () => {
             </div>
           </div>
         ))}
-      {currentQest > List.length && (
+      {currentQest > questionList.length && (
         <div className="bg-gradient-to-r   from-cyan-500 to-blue-500 flex flex-col justify-center items-center">
           <span className=" font-semibold text-stone-100 p-2 font-Fredoka text-3xl">
             {FinalScore.length >= 5 ? (

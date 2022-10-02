@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
-const index = ({ choices, HandlClickNext, Clickedchoice }: any) => {
+const index = ({ choices, HandlClickNext, Clickedchoice, isDisplay }: any) => {
   return (
     <>
-      {choices.map((res: any, i: any) => {
-        return (
-          <ul key={i} className="w-[300px] sm:w-[380px] md:w-[450px] ">
-            <li className="  h-[60px] flex items-center  text-blue-400 rounded-lg border-b overflow-hidden    duration-500 transition-all bg-stone-100  hover:bg-cyan-500 hover:shadow-lg hover:text-stone-50 m-2 font-mono cursor-pointer text-lg shadow-xl ">
+      <ul className="w-[300px] sm:w-[380px] md:w-[450px]">
+        {choices.map((res: any, i: any) => {
+          return (
+            <li className=" h-[60px] flex items-center  text-blue-400 rounded-lg border-b overflow-hidden    duration-500 transition-all bg-stone-100  hover:bg-cyan-500 hover:shadow-lg hover:text-stone-50 m-2 font-mono cursor-pointer text-lg shadow-xl ">
               <div className=" flex items-center gap-2 pl-3 w-full h-full ">
                 <input
                   onClick={Clickedchoice}
@@ -25,9 +26,10 @@ const index = ({ choices, HandlClickNext, Clickedchoice }: any) => {
                 </label>
               </div>
             </li>
-          </ul>
-        );
-      })}
+          );
+        })}
+      </ul>
+
       <div className=" mr-2  flex justify-end ">
         <button
           onClick={HandlClickNext}

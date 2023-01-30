@@ -11,6 +11,7 @@ import Stack from "@mui/material/Stack";
 import swal from "sweetalert";
 
 const index = () => {
+
   const questionList = [
     {
       questionNumber: 1,
@@ -123,7 +124,9 @@ const index = () => {
   };
 
   const Clickedchoice = (e: any) => {
+
     setIsChecked(true);
+
     let result = {
       question: filterList[0].question,
       choices: filterList[0].choices,
@@ -156,6 +159,7 @@ const index = () => {
               <div className="p-10 w-[340px]  h-[400px] sm:w-[450px] md:w-[750px]  bg-[url('/src/assests/food.jpeg')] bg-cover flex justify-center ">
                 <div>
                   <ChoiceComponent
+                  userChoice={userChoice}
                     Clickedchoice={Clickedchoice}
                     HandlClickNext={HandlClickNext}
                     choices={el.choices}
